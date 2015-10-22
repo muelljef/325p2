@@ -28,6 +28,8 @@ f.close()
 print arrays
 
 changeAlgorithms.changegreedy(arrays[0], arrays[1][0])
+changeAlgorithms.changedp(arrays[0], arrays[1][0])
+
 # def algorithmDisplayResults(algorithm, temp_array, recursive=0):
 #             if recursive:
 #                 i, j, max_sub_sum = algorithm(temp_array, 0, len(temp_array) - 1)
