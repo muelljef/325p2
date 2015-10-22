@@ -76,3 +76,26 @@ def changedp(coins, amount):
 
     print coins_used[amt]
     print min_coins[amount]
+
+# def changedp(amount, coins):
+#     min_coins = [[0 for x in range(len(coins))] for y in range(amount + 1)]  # amt+1 because we want a left-most zero column
+#     coins_used = [[0 for x in range(len(coins))] for y in range(amount + 1)]  # amt+1 because we want a left-most zero column
+#     for a in range(1,amount+1):
+#         j=0
+#         col_min=float("inf")
+#         bool_coin = False
+#         for j, d in enumerate(coins):
+#             if d <= a: #change possible
+#                 if (min_coins[a - d][j] + 1) <= col_min:
+#                     col_min = min_coins[a][j] = min_coins[a - d][j] + 1
+#                     sub_mincoin = d
+#                     sub_minpos = j
+#                     bool_coin = True
+#             for x in range(j+1,len(coins)):
+#                 min_coins[a][x] = col_min
+#         if bool_coin:
+#             for y in range(len(coins)):
+#                 coins_used[a][y]=coins_used[a-sub_mincoin][y] #transfer the column and what it used in that column to make up the min
+#             coins_used[a][sub_minpos] +=1
+#     print(coins_used[a])
+#     print min_coins[a][j]
