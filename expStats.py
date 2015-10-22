@@ -34,38 +34,38 @@ def write_to_csv(file_name,x,y):
         statswriter.writerow(y)
     print " >>>>> done! Results written to", file_name
 
+def generate_statistics(A, coins, file_name, alg_name, algorithm):
+    min_coins = []
+    for amt in A:
+        print "\n"+str(alg_name)
+        min_coins.append(algorithm(V,amt))
+    write_to_csv(file_name,A,min_coins)
+
+########## QUESTION 4 ##########
 V=[1,5,10,25,50]
 A = generate_list(2010,2200,5)
+generate_statistics(A, V, 'Q4Greedy.csv', 'Greedy-Question4', changeAlgorithms.changegreedy)
+generate_statistics(A, V, 'Q4DP.csv', 'DP-Question4', changeAlgorithms.changedp)
 
-min_coins = []
-for amt in A:
-    #print "\n--Slow--"
-    #solution = [sol for sol in changeAlgorithms.changeslow(V,amt,[])]
-    #print min(solution, key=len)
-    #print len(min(solution, key=len))
-    print "\n--Greedy--"
-    min_coins.append(changeAlgorithms.changegreedy(V,amt))
+########## QUESTION 45 ##########
+V1 = [1,2,6,12,24,48,60]
+V2 = [1,6,13,37,150]
+A1 = generate_list(2000,2200,1)
+A2 = generate_list(10000,10100,1)
+generate_statistics(A1, V1, 'Q5Greedy.csv', 'Greedy-Question5', changeAlgorithms.changegreedy)
+generate_statistics(A1, V2, 'Q5Greedy.csv', 'Greedy-Question5', changeAlgorithms.changegreedy)
+generate_statistics(A1, V1, 'Q5DP.csv', 'DP-Question5', changeAlgorithms.changedp)
+generate_statistics(A1, V2, 'Q5DP.csv', 'DP-Question5', changeAlgorithms.changedp)
+#if above runs too slowly
+#generate_statistics(A2, V1, 'Q5Greedy.csv', 'Greedy-Question5', changeAlgorithms.changegreedy)
+#generate_statistics(A2, V2, 'Q5DP.csv', 'DP-Question5', changeAlgorithms.changedp)
+#generate_statistics(A2, V1, 'Q5Greedy.csv', 'Greedy-Question5', changeAlgorithms.changegreedy)
+#generate_statistics(A2, V2, 'Q5DP.csv', 'DP-Question5', changeAlgorithms.changedp)
 
-write_to_csv('stats1',A,min_coins)
-
-# for amt in A:
-#     print "--DP--"
-#     changeAlgorithms.changedp(V,amt)
-#     write_to_csv('stats2',amt,)
-#
-# V1 = [1,2,6,12,24,48,60]
-# A = generate_list(2000,2200,1)
-#
-# for amt in A:
-#     print "\n--Greedy--"
-#     changeAlgorithms.changegreedy(V1,amt)
-#     write_to_csv('stats3',amt,)
-#
-# for amt in A:
-#     print "--DP--"
-#     changeAlgorithms.changedp(V1,amt)
-#     write_to_csv('stats4',amt)
-#
-# V2 = [1,6,13,37,150]
-#
+########## QUESTION 6 ##########
+V3=[1]
+V3.append(generate_list(2,30,2))
+print V3
+generate_statistics(A1, V3, 'Q6Greedy.csv', 'Greedy-Question6', changeAlgorithms.changegreedy)
+generate_statistics(A1, V3, 'Q6DP.csv', 'DP-Question6', changeAlgorithms.changedp)
 
