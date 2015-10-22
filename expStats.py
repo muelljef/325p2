@@ -63,8 +63,7 @@ generate_statistics(A1, V2, 'Q5DP.csv', 'DP-Question5', changeAlgorithms.changed
 #generate_statistics(A2, V2, 'Q5DP.csv', 'DP-Question5', changeAlgorithms.changedp)
 
 ########## QUESTION 6 ##########
-V3=[1]
-V3.append(generate_list(2,30,2))
+V3=[1] + generate_list(2,30,2)
 print V3
 generate_statistics(A1, V3, 'Q6Greedy.csv', 'Greedy-Question6', changeAlgorithms.changegreedy)
 generate_statistics(A1, V3, 'Q6DP.csv', 'DP-Question6', changeAlgorithms.changedp)
