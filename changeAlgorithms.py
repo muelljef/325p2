@@ -40,30 +40,41 @@ def changegreedy(coins, amount):
     print min_coins
 
 def changedp(coins, amount):
-    #to initialize and append min coins for value of 0
-    minCoins = []
-    minCoins.append(0)
-    #to initialize an 2d array to store coins used for different amounts
-    coinsUsed = [[0 for x in range(len(coins))] for y in range(amount + 1)]
+    # to initialize min coins with index corresponding to amount
+    min_coins = [0]
+    # to initialize an 2d array to store coins used for different amounts
+    # first index corresponds to amount, 2nd index to coins
+    coins_used = [[0 for x in range(len(coins))] for y in range(amount + 1)]
 
     for amt in range(1, amount + 1):
         subproblem_min = amt
-
         i = 0
-        sub_min_coin = amount + 1
+        bool_coin = False
         for coin in coins:
-            #if the amount is equal to a coin value, the min is 1
+            # if the amount is equal to a coin value, the min is 1
             if coin == amt:
-                subproblem_min = 1
-                coinsUsed[amt][i] = 1
+                bool_coin = False
+                # setting to zero because we add one later
+                subproblem_min = 0
+                for y in coins_used[amount]:
+                    y = 0
+                coins_used[amt][i] = 1
                 break
 
             if coin < amt:
                 prev_target = amt - coin
-                if (minCoins[prev_target] + 1) < subproblem_min:
-                    subproblem_min = minCoins[prev_target] + 1
+                if (min_coins[prev_target]) < subproblem_min:
+                    subproblem_min = min_coins[prev_target]
+                    sub_mincoin = coin
+                    sub_minpos = i
+                    bool_coin = True
             i += 1
-        minCoins.append(subproblem_min)
 
-    print minCoins[amount]
-    print coinsUsed[amount]
+        min_coins.append(subproblem_min + 1)
+        if bool_coin:
+            for x in range(len(coins)):
+                coins_used[amt][x] = coins_used[amt - sub_mincoin][x]
+            coins_used[amt][sub_minpos] += 1
+
+    print coins_used[amt]
+    print min_coins[amount]
