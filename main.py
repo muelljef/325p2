@@ -25,10 +25,19 @@ with open("Coin1.txt", "r") as f:
         testCaseNum += 1
 f.close()
 
-print arrays
+for i in range(0, len(arrays)):
+    print arrays[i]
+print "\n"
 
-changeAlgorithms.changegreedy(arrays[0], arrays[1][0])
-changeAlgorithms.changedp(arrays[0], arrays[1][0])
+test_case_num = 1
+for i in range(0, len(arrays), 2):
+    print "Test case %s" % test_case_num
+    print "dynamic"
+    changeAlgorithms.changedp(arrays[i], arrays[i+1][0])
+    print "greedy"
+    changeAlgorithms.changegreedy(arrays[i], arrays[i+1][0])
+    print "\n"
+    test_case_num += 1
 
 # def algorithmDisplayResults(algorithm, temp_array, recursive=0):
 #             if recursive:
