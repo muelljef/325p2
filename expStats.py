@@ -52,10 +52,10 @@ V1 = [1,2,6,12,24,48,60]
 V2 = [1,6,13,37,150]
 A1 = generate_list(2000,2200,1)
 A2 = generate_list(10000,10100,1)
-generate_statistics(A1, V1, 'Q5Greedy.csv', 'Greedy-Question5', changeAlgorithms.changegreedy)
-generate_statistics(A1, V2, 'Q5Greedy.csv', 'Greedy-Question5', changeAlgorithms.changegreedy)
-generate_statistics(A1, V1, 'Q5DP.csv', 'DP-Question5', changeAlgorithms.changedp)
-generate_statistics(A1, V2, 'Q5DP.csv', 'DP-Question5', changeAlgorithms.changedp)
+generate_statistics(A1, V1, 'Q5GreedyV1.csv', 'Greedy-Question5V1', changeAlgorithms.changegreedy)
+generate_statistics(A1, V2, 'Q5GreedyV2.csv', 'Greedy-Question5V2', changeAlgorithms.changegreedy)
+generate_statistics(A1, V1, 'Q5DPV1.csv', 'DP-Question5V1', changeAlgorithms.changedp)
+generate_statistics(A1, V2, 'Q5DPV2.csv', 'DP-Question5V2', changeAlgorithms.changedp)
 #if above runs too slowly
 #generate_statistics(A2, V1, 'Q5Greedy.csv', 'Greedy-Question5', changeAlgorithms.changegreedy)
 #generate_statistics(A2, V2, 'Q5DP.csv', 'DP-Question5', changeAlgorithms.changedp)
