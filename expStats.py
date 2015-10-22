@@ -28,7 +28,7 @@ def generate_list(start, end, interval):
     return arr
 
 def write_to_csv(file_name,x,y):
-    with open(file_name, 'ab') as csvfile:
+    with open(file_name, 'wb') as csvfile:
         statswriter = csv.writer(csvfile)
         statswriter.writerow(x)
         statswriter.writerow(y)
