@@ -10,20 +10,18 @@
 # ==============================================================================
 
 
-def changeslow(V,K):
-        if K in V:
-            return 1
-        else:
-            min_coins = float("inf")
-            for j in range(1,K):
-                num_coins1 = num_coins2 = 0
-                num_coins1 += changeslow(V,j)
-                num_coins2 += changeslow(V,K-j)
-                #print("j=" + str(j) + "n1 = "+str(num_coins1)+" n2="+str(num_coins2))
-                coin_count = num_coins1 + num_coins2
-                if coin_count < min_coins:
-                    min_coins = coin_count
-            return min_coins
+def changeslow(coins, amount, used_list):
+    if sum(used_list) == amount: #sum of the list is the amount
+        yield used_list
+    elif sum(used_list) > amount:
+        pass
+    elif coins == []:
+        pass
+    else:
+        for coin in changeslow(coins, amount, used_list+[coins[0]]):
+            yield coin
+        for coin in changeslow(coins[1:], amount, used_list):
+            yield coin
 
 def changegreedy(coins, amount):
     min_coins = 0
