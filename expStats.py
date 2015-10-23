@@ -38,7 +38,7 @@ def generate_statistics(A, coins, file_name, alg_name, algorithm):
     min_coins = []
     for amt in A:
         print "\n"+str(alg_name)
-        min_coins.append(algorithm(V,amt))
+        min_coins.append(algorithm(coins,amt))
     write_to_csv(file_name,A,min_coins)
 
 ########## QUESTION 4 ##########
