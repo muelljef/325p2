@@ -39,7 +39,9 @@ for i in range(0, len(arrays), 2):
     print len(min(solution, key=len))
     
     print "dynamic"
-    changeAlgorithms.changedp(arrays[i], arrays[i+1][0])
+    coins = arrays[i]
+    amount = arrays[i+1][0]
+    changeAlgorithms.changedp(coins, amount, min_coins, coins_used)
     
     print "greedy"
     changeAlgorithms.changegreedy(arrays[i], arrays[i+1][0])

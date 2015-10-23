@@ -34,8 +34,8 @@ def changegreedy(coins, amount):
             min_coins += 1
             coins_used[i] += 1
         i -= 1
-    print coins_used
-    print min_coins
+    #print coins_used
+    #print min_coins
     return min_coins
 
 def changedp2(coins, amount):
@@ -75,8 +75,8 @@ def changedp2(coins, amount):
                 coins_used[amt][x] = coins_used[amt - sub_mincoin][x]
             coins_used[amt][sub_minpos] += 1
 
-    print coins_used[amt]
-    print min_coins[amount]
+    #print coins_used[amt]
+    #print min_coins[amount]
     return min_coins[amount]
 
 def changedp(coins,amount):
@@ -99,6 +99,6 @@ def changedp(coins,amount):
             for y in range(len(coins)):
                 coins_used[a][y]=coins_used[a-sub_mincoin][y] #transfer the column and what it used in that column to make up the min
             coins_used[a][sub_minpos] +=1
-    print(coins_used[a])
-    print min_coins[a][j]
+    #print(coins_used[a])
+    #print min_coins[a][j]
     return min_coins[a][j]
