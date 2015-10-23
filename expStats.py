@@ -72,15 +72,15 @@ print "Question 5 V2 A2"
 print_result_for_comparison(V2,A2,changeAlgorithms.changegreedy,changeAlgorithms.changedp)
 print_result_for_comparison(V2,A2,changeAlgorithms.changegreedy,changeAlgorithms.changedp)
 
-generate_statistics(A1, V1, 'Q5Greedy_A1_V1.csv', 'Greedy-Question5V1', changeAlgorithms.changegreedy)
-generate_statistics(A1, V2, 'Q5Greedy_A1_V2.csv', 'Greedy-Question5V1', changeAlgorithms.changegreedy)
-generate_statistics(A1, V1, 'Q5DP_A1_V1.csv', 'DP-Question5V1', changeAlgorithms.changedp)
-generate_statistics(A1, V2, 'Q5DP_A1_V2.csv', 'DP-Question5V2', changeAlgorithms.changedp)
+generate_statistics(A1, V1, 'Q5Greedy_A1_V1.csv', 'Greedy-Question5_A1_V1', changeAlgorithms.changegreedy)
+generate_statistics(A1, V2, 'Q5Greedy_A1_V2.csv', 'Greedy-Question5_A1_V2', changeAlgorithms.changegreedy)
+generate_statistics(A1, V1, 'Q5DP_A1_V1.csv', 'DP-Question5_A1_V1', changeAlgorithms.changedp)
+generate_statistics(A1, V2, 'Q5DP_A1_V2.csv', 'DP-Question5_A1_V2', changeAlgorithms.changedp)
 
-generate_statistics(A2, V1, 'Q5Greedy_A2_V1.csv', 'Greedy-Question5V1', changeAlgorithms.changegreedy)
-generate_statistics(A2, V2, 'Q5Greedy_A2_V2.csv', 'Greedy-Question5V1', changeAlgorithms.changegreedy)
-generate_statistics(A2, V1, 'Q5DP_A2_V1.csv', 'Greedy-Question5V1', changeAlgorithms.changegreedy)
-generate_statistics(A2, V2, 'Q5DP_A2_V2.csv', 'Greedy-Question5V1', changeAlgorithms.changegreedy)
+generate_statistics(A2, V1, 'Q5Greedy_A2_V1.csv', 'Greedy-Question5_A2_V1', changeAlgorithms.changegreedy)
+generate_statistics(A2, V2, 'Q5Greedy_A2_V2.csv', 'Greedy-Question5_A2_V2', changeAlgorithms.changegreedy)
+generate_statistics(A2, V1, 'Q5DP_A2_V1.csv', 'Greedy-Question5_A2_V1', changeAlgorithms.changegreedy)
+generate_statistics(A2, V2, 'Q5DP_A2_V2.csv', 'Greedy-Question5_A2_V2', changeAlgorithms.changegreedy)
 
 #if above runs too slowly
 #generate_statistics(A2, V1, 'Q5Greedy_A2_V1.csv', 'Greedy-Question5', changeAlgorithms.changegreedy)
