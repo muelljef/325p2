@@ -34,12 +34,12 @@ def write_to_csv(file_name,x,y):
         statswriter.writerow(y)
     print " >>>>> done! Results written to", file_name
 
-def generate_statistics(A, coins, file_name, alg_name, algorithm):
+def generate_statistics(Amt, coins, file_name, alg_name, algorithm):
     min_coins = []
-    for amt in A:
+    for a in Amt:
         print "\n"+str(alg_name)
-        min_coins.append(algorithm(coins,amt))
-    write_to_csv(file_name,A,min_coins)
+        min_coins.append(algorithm(coins,a))
+    write_to_csv(file_name,Amt,min_coins)
 
 ########## QUESTION 4 ##########
 V=[1,5,10,25,50]
@@ -59,18 +59,18 @@ def print_result_for_comparison(coins,A,greedy,dp):
         greedy(coins,a)
         print "--DP--"
         dp(coins,a)
-print "Question 5 V1 A1"
-print_result_for_comparison(V1,A1,changeAlgorithms.changegreedy,changeAlgorithms.changedp)
-print_result_for_comparison(V1,A1,changeAlgorithms.changegreedy,changeAlgorithms.changedp)
-print "Question 5 V1 A2"
-print_result_for_comparison(V1,A2,changeAlgorithms.changegreedy,changeAlgorithms.changedp)
-print_result_for_comparison(V1,A2,changeAlgorithms.changegreedy,changeAlgorithms.changedp)
-print "Question 5 V2 A1"
-print_result_for_comparison(V2,A1,changeAlgorithms.changegreedy,changeAlgorithms.changedp)
-print_result_for_comparison(V2,A1,changeAlgorithms.changegreedy,changeAlgorithms.changedp)
-print "Question 5 V2 A2"
-print_result_for_comparison(V2,A2,changeAlgorithms.changegreedy,changeAlgorithms.changedp)
-print_result_for_comparison(V2,A2,changeAlgorithms.changegreedy,changeAlgorithms.changedp)
+# print "Question 5 V1 A1"
+# print_result_for_comparison(V1,A1,changeAlgorithms.changegreedy,changeAlgorithms.changedp)
+# print_result_for_comparison(V1,A1,changeAlgorithms.changegreedy,changeAlgorithms.changedp)
+# print "Question 5 V1 A2"
+# print_result_for_comparison(V1,A2,changeAlgorithms.changegreedy,changeAlgorithms.changedp)
+# print_result_for_comparison(V1,A2,changeAlgorithms.changegreedy,changeAlgorithms.changedp)
+# print "Question 5 V2 A1"
+# print_result_for_comparison(V2,A1,changeAlgorithms.changegreedy,changeAlgorithms.changedp)
+# print_result_for_comparison(V2,A1,changeAlgorithms.changegreedy,changeAlgorithms.changedp)
+# print "Question 5 V2 A2"
+# print_result_for_comparison(V2,A2,changeAlgorithms.changegreedy,changeAlgorithms.changedp)
+# print_result_for_comparison(V2,A2,changeAlgorithms.changegreedy,changeAlgorithms.changedp)
 
 generate_statistics(A1, V1, 'Q5Greedy_A1_V1.csv', 'Greedy-Question5_A1_V1', changeAlgorithms.changegreedy)
 generate_statistics(A1, V2, 'Q5Greedy_A1_V2.csv', 'Greedy-Question5_A1_V2', changeAlgorithms.changegreedy)
@@ -79,8 +79,8 @@ generate_statistics(A1, V2, 'Q5DP_A1_V2.csv', 'DP-Question5_A1_V2', changeAlgori
 
 generate_statistics(A2, V1, 'Q5Greedy_A2_V1.csv', 'Greedy-Question5_A2_V1', changeAlgorithms.changegreedy)
 generate_statistics(A2, V2, 'Q5Greedy_A2_V2.csv', 'Greedy-Question5_A2_V2', changeAlgorithms.changegreedy)
-generate_statistics(A2, V1, 'Q5DP_A2_V1.csv', 'Greedy-Question5_A2_V1', changeAlgorithms.changegreedy)
-generate_statistics(A2, V2, 'Q5DP_A2_V2.csv', 'Greedy-Question5_A2_V2', changeAlgorithms.changegreedy)
+generate_statistics(A2, V1, 'Q5DP_A2_V1.csv', 'Greedy-Question5_A2_V1', changeAlgorithms.changedp)
+generate_statistics(A2, V2, 'Q5DP_A2_V2.csv', 'Greedy-Question5_A2_V2', changeAlgorithms.changedp)
 
 #if above runs too slowly
 #generate_statistics(A2, V1, 'Q5Greedy_A2_V1.csv', 'Greedy-Question5', changeAlgorithms.changegreedy)
