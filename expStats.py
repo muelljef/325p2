@@ -53,7 +53,24 @@ V2 = [1,6,13,37,150]
 A1 = generate_list(2000,2200,1)
 A2 = generate_list(10000,10100,1)
 
-git
+def print_result_for_comparison(coins,A,greedy,dp):
+    for a in A:
+        print "\n--Greedy--"
+        greedy(coins,a)
+        print "--DP--"
+        dp(coins,a)
+print "Question 5 V1 A1"
+print_result_for_comparison(V1,A1,changeAlgorithms.changegreedy,changeAlgorithms.changedp)
+print_result_for_comparison(V1,A1,changeAlgorithms.changegreedy,changeAlgorithms.changedp)
+print "Question 5 V1 A2"
+print_result_for_comparison(V1,A2,changeAlgorithms.changegreedy,changeAlgorithms.changedp)
+print_result_for_comparison(V1,A2,changeAlgorithms.changegreedy,changeAlgorithms.changedp)
+print "Question 5 V2 A1"
+print_result_for_comparison(V2,A1,changeAlgorithms.changegreedy,changeAlgorithms.changedp)
+print_result_for_comparison(V2,A1,changeAlgorithms.changegreedy,changeAlgorithms.changedp)
+print "Question 5 V2 A2"
+print_result_for_comparison(V2,A2,changeAlgorithms.changegreedy,changeAlgorithms.changedp)
+print_result_for_comparison(V2,A2,changeAlgorithms.changegreedy,changeAlgorithms.changedp)
 
 generate_statistics(A1, V1, 'Q5Greedy_A1_V1.csv', 'Greedy-Question5V1', changeAlgorithms.changegreedy)
 generate_statistics(A1, V2, 'Q5Greedy_A1_V2.csv', 'Greedy-Question5V2', changeAlgorithms.changegreedy)
