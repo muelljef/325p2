@@ -76,6 +76,7 @@ generate_statistics(A1, V1, 'Q5Greedy_A1_V1.csv', 'Greedy-Question5V1', changeAl
 generate_statistics(A1, V2, 'Q5Greedy_A1_V2.csv', 'Greedy-Question5V2', changeAlgorithms.changegreedy)
 generate_statistics(A1, V1, 'Q5DP_A1_V1.csv', 'DP-Question5V1', changeAlgorithms.changedp)
 generate_statistics(A1, V2, 'Q5DPA1_V2.csv', 'DP-Question5V2', changeAlgorithms.changedp)
+
 #if above runs too slowly
 #generate_statistics(A2, V1, 'Q5Greedy_A2_V1.csv', 'Greedy-Question5', changeAlgorithms.changegreedy)
 #generate_statistics(A2, V2, 'Q5DP_A2_V2.csv', 'DP-Question5', changeAlgorithms.changedp)
@@ -84,7 +85,7 @@ generate_statistics(A1, V2, 'Q5DPA1_V2.csv', 'DP-Question5V2', changeAlgorithms.
 
 ########## QUESTION 6 ##########
 V3=[1] + generate_list(2,30,2)
-print V3
+#print V3
 generate_statistics(A1, V3, 'Q6Greedy.csv', 'Greedy-Question6', changeAlgorithms.changegreedy)
 generate_statistics(A1, V3, 'Q6DP.csv', 'DP-Question6', changeAlgorithms.changedp)
 
