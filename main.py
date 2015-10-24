@@ -34,18 +34,18 @@ for i in range(0, len(arrays), 2):
     print "Test case %s" % test_case_num
     
     print "brute force - recursive"
-    solution =  [sol for sol in changeAlgorithms.changeslow(arrays[i], arrays[i+1][0], [])]
+    solution = [sol for sol in changeAlgorithms.changeslow(arrays[i], arrays[i+1][0], [])]
     print min(solution, key=len)
     print len(min(solution, key=len))
     
     print "dynamic"
     coins = arrays[i]
     amount = arrays[i+1][0]
-    changeAlgorithms.changedp(coins, amount, min_coins, coins_used)
-    
+    print changeAlgorithms.changedp(coins, amount)
+
     print "greedy"
-    changeAlgorithms.changegreedy(arrays[i], arrays[i+1][0])
-    
+    print changeAlgorithms.changegreedy(arrays[i], arrays[i+1][0])
+
     print "\n"
     test_case_num += 1
 
