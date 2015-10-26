@@ -74,7 +74,7 @@ generate_statistics(A, V, 'Q4withslow.csv', 'Slow-Question4', changeAlgorithms.c
 ########## QUESTION 5 ##########
 V1 = [1, 2, 6, 12, 24, 48, 60]
 V2 = [1, 6, 13, 37, 150]
-A1 = generate_list(2, 200, 2)
+A1 = generate_list(2, 70, 2)
 
 
 def print_result_for_comparison(coins, A, greedy, dp):
@@ -92,7 +92,7 @@ generate_statistics(A1, V2, 'Q5withSlow.csv', 'greedy-v2', changeAlgorithms.chan
 generate_statistics(A1, V2, 'Q5withSlow.csv', 'dp-v2', changeAlgorithms.changedp, 0, 1)
 generate_statistics(A1, V2, 'Q5withSlow.csv', 'slow-v2', changeAlgorithms.changeslow, 1, 1)
 
-"""
+
 ########## QUESTION 6 ##########
 A3 = generate_list(2, 70, 2)
 V3 = [1] + generate_list(2, 30, 2)
@@ -100,4 +100,4 @@ V3 = [1] + generate_list(2, 30, 2)
 generate_statistics(A3, V3, 'Q6withSlow.csv', 'Greedy-Question6', changeAlgorithms.changegreedy)
 generate_statistics(A3, V3, 'Q6withSlow.csv', 'DP-Question6', changeAlgorithms.changedp, 0, 1)
 generate_statistics(A3, V3, 'Q6withSlow.csv', 'Slow-Question6', changeAlgorithms.changeslow, 1, 1)
-"""
+
