@@ -42,7 +42,8 @@ def generate_statistics(Amt, coins, file_name, alg_name, algorithm):
         #print "\n"+str(alg_name)
         total_time = 0   
         start = time.clock()
-        min_coins.append(algorithm(coins,a))
+        tmp_min_coins, tmp_used_coins = algorithm(coins,a)
+        min_coins.append(tmp_min_coins)
         elapsed = time.clock() - start
         total_time += elapsed
         alg_time.append(total_time/10.0)

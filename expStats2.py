@@ -58,7 +58,8 @@ def generate_statistics(Amt, coins, file_name, alg_name, algorithm, bool_slow=0,
             solution = algorithm(coins, a, [])
             min_coins.append(len(min(solution, key=len)))
         else:
-            min_coins.append(algorithm(coins,a))
+            tmp_min_coins, tmp_used_coins = algorithm(coins,a)
+            min_coins.append(tmp_min_coins)
         elapsed = time.clock() - start
         total_time += elapsed
         alg_time.append(total_time/10.0)
