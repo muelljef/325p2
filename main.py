@@ -40,23 +40,36 @@ else:
         print arrays[i]
     print "\n"
 
-    test_case_num = 1
-    for i in range(0, len(arrays), 2):
-        print "Test case %s" % test_case_num
+    output_filename = str(file_name)
+    output_filename = output_filename.replace(".txt", "change.txt")
+    with open(output_filename, "w") as of:
+        test_case_num = 1
+        for i in range(0, len(arrays), 2):
+            of.write("Test case " + str(test_case_num) + "\n")
 
-        print "brute force - recursive"
-        solution = [sol for sol in changeAlgorithms.changeslow(arrays[i], arrays[i+1][0], [])]
-        print min(solution, key=len)
-        print len(min(solution, key=len))
+            of.write("brute force - recursive \n")
+            solution = [sol for sol in changeAlgorithms.changeslow(arrays[i], arrays[i+1][0], [])]
+            coins_array_pos = (test_case_num - 1) * 2
+            soln_usedcoins = [0] * len(arrays[coins_array_pos])
+            for coin_value in min(solution, key=len):
+                for index, value in enumerate(arrays[coins_array_pos]):
+                    if (coin_value == value):
+                        soln_usedcoins[index] += 1
 
-        print "dynamic"
-        coins = arrays[i]
-        amount = arrays[i+1][0]
-        print changeAlgorithms.changedp(coins, amount)
+            of.write(str(soln_usedcoins) + "\n")
+            of.write(str(len(min(solution, key=len))) + "\n")
 
-        print "greedy"
-        print changeAlgorithms.changegreedy(arrays[i], arrays[i+1][0])
+            of.write("dynamic \n")
+            coins = arrays[i]
+            amount = arrays[i+1][0]
+            soln_mincoin, soln_usedcoins = changeAlgorithms.changedp(coins, amount)
+            of.write(str(soln_usedcoins) + "\n")
+            of.write(str(soln_mincoin) + "\n")
 
-        print "\n"
-        test_case_num += 1
+            of.write("greedy \n")
+            soln_mincoin, soln_usedcoins = changeAlgorithms.changegreedy(coins, amount)
+            of.write(str(soln_usedcoins) + "\n")
+            of.write(str(soln_mincoin) + "\n")
 
+            of.write("\n")
+            test_case_num += 1
