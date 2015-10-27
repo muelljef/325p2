@@ -1,4 +1,4 @@
-CS 325 Project 1
+CS 325 Project 2
 ================
 To test the programs against as specified input filename: Ensure that all of the required files are in the same directory. 
 
